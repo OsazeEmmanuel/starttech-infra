@@ -42,3 +42,15 @@ variable "private_subnet_cidrs" {
     "10.0.12.0/24"
   ]
 }
+
+variable "cluster_name" {
+  description = "StartTech EKS Cluster Name"
+  type        = string
+  default     = "starttech-cluster"
+}
+
+variable "cluster_version" {
+  description = "Kubernetes Version"
+  type        = string
+  default     = "1.34"
+}
