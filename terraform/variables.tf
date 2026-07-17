@@ -54,3 +54,15 @@ variable "cluster_version" {
   type        = string
   default     = "1.34"
 }
+
+variable "frontend_bucket_name" {
+  description = "Frontend S3 bucket"
+  type        = string
+  default     = "starttech-frontend-bucket-osaze"
+}
+
+variable "ecr_repository_name" {
+  description = "Backend ECR repository"
+  type        = string
+  default     = "starttech-backend-api"
+}

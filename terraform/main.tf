@@ -15,3 +15,18 @@ module "eks" {
   vpc_id             = module.networking.vpc_id
   private_subnet_ids = module.networking.private_subnet_ids
 }
+
+module "storage" {
+  source = "./modules/storage"
+
+  frontend_bucket_name = var.frontend_bucket_name
+  ecr_repository_name  = var.ecr_repository_name
+}
+
+module "database" {
+  source = "./modules/database"
+
+  vpc_id                        = module.networking.vpc_id
+  private_subnet_ids            = module.networking.private_subnet_ids
+  eks_cluster_security_group_id = module.eks.cluster_security_group_id
+}
