@@ -31,11 +31,11 @@ module "database" {
   eks_cluster_security_group_id = module.eks.cluster_security_group_id
 }
 #module "cdn" {
- # source        = "./modules/cdn"
-  #bucket_name   = module.storage.frontend_bucket_name
- # bucket_domain = module.storage.frontend_bucket_regional_domain_name
+# source        = "./modules/cdn"
+#bucket_name   = module.storage.frontend_bucket_name
+# bucket_domain = module.storage.frontend_bucket_regional_domain_name
 #
- # alb_dns_name = "example.com"
+# alb_dns_name = "example.com"
 #
- # tags = var.tags
+# tags = var.tags
 #}
