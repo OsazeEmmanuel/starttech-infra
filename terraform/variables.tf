@@ -66,3 +66,15 @@ variable "ecr_repository_name" {
   type        = string
   default     = "starttech-backend-api"
 }
+
+variable "tags" {
+  description = "Common tags applied to all resources"
+
+  type = map(string)
+
+  default = {
+    Project     = "starttech"
+    Environment = "production"
+    ManagedBy   = "Terraform"
+  }
+}

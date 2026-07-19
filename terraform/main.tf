@@ -30,3 +30,12 @@ module "database" {
   private_subnet_ids            = module.networking.private_subnet_ids
   eks_cluster_security_group_id = module.eks.cluster_security_group_id
 }
+#module "cdn" {
+ # source        = "./modules/cdn"
+  #bucket_name   = module.storage.frontend_bucket_name
+ # bucket_domain = module.storage.frontend_bucket_regional_domain_name
+#
+ # alb_dns_name = "example.com"
+#
+ # tags = var.tags
+#}
