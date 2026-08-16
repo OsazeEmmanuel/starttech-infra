@@ -42,3 +42,39 @@ variable "private_subnet_cidrs" {
     "10.0.12.0/24"
   ]
 }
+
+variable "cluster_name" {
+  description = "StartTech EKS Cluster Name"
+  type        = string
+  default     = "starttech-cluster"
+}
+
+variable "cluster_version" {
+  description = "Kubernetes Version"
+  type        = string
+  default     = "1.34"
+}
+
+variable "frontend_bucket_name" {
+  description = "Frontend S3 bucket"
+  type        = string
+  default     = "starttech-frontend-bucket-osaze"
+}
+
+variable "ecr_repository_name" {
+  description = "Backend ECR repository"
+  type        = string
+  default     = "starttech-backend-api"
+}
+
+variable "tags" {
+  description = "Common tags applied to all resources"
+
+  type = map(string)
+
+  default = {
+    Project     = "starttech"
+    Environment = "production"
+    ManagedBy   = "Terraform"
+  }
+}
